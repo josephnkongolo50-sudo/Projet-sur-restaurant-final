@@ -1,0 +1,510 @@
+/* --- STYLES GÉNÉRAUX --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body.site-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a2342; /* bleu marine */
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- NAVIGATION BOOTSTRAP PERSONNALISÉE --- */
+.hilton-nav {
+    background-color: #061a33; /* bleu marine foncé */
+    padding: 12px 4%;
+    min-height: 80px;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+/* Nom du restaurant (en haut à gauche) : agrandi */
+.hilton-brand {
+    color: #60a5fa !important;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.hilton-nav .navbar-nav {
+    align-items: center;
+}
+
+/* Liens du menu */
+.hilton-nav .nav-link,
+.hilton-nav a:not(.hilton-brand) {
+    color: #f1f5f9 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+/* Survol : léger fond bleu marine */
+.hilton-nav .nav-link:hover,
+.hilton-nav .nav-link:focus,
+.hilton-nav a:not(.hilton-brand):hover,
+.hilton-nav a:not(.hilton-brand):focus {
+    color: #60a5fa !important;
+    background-color: #12335f;
+}
+
+/* Page active (ex. Présentation) : petit emplacement bleu derrière le mot */
+.hilton-nav .nav-link:active,
+.hilton-nav .nav-link.active,
+.hilton-nav a:not(.hilton-brand):active,
+.hilton-nav a:not(.hilton-brand).active {
+    color: #ffffff !important;
+    background-color: #2563eb;
+    font-weight: 600;
+}
+
+/* --- 1. ACCUEIL (index.html) --- */
+.hero-accueil {
+    flex: 1 0 auto;
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+    background: linear-gradient(rgba(10, 35, 66, 0.55), rgba(10, 35, 66, 0.55)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.hero-accueil h1 {
+    font-size: 3.3rem;
+    font-weight: bold;
+    color: #60a5fa;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+
+.hero-accueil p {
+    font-size: 1.2rem;
+    max-width: 620px;
+    margin-bottom: 28px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* --- 2. PRÉSENTATION (presentation.html) --- */
+.page-presentation .presentation-hero { padding: 140px 0 30px; }
+
+.page-presentation .sur-titre {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4db5ff;
+  margin-bottom: 10px;
+}
+.page-presentation .presentation-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #1e90ff;
+  margin-bottom: 12px;
+}
+.page-presentation .accroche {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #e8f1ff;
+}
+
+/* Espace entre les parties et titres de partie */
+.page-presentation .bloc { padding: 30px 0; }
+.page-presentation .appel { padding-bottom: 70px; }
+
+.page-presentation .titre-section {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #4db5ff;
+  margin-bottom: 6px;
+}
+.page-presentation .sous-titre-section {
+  text-align: center;
+  color: #cfe0ff;
+  margin-bottom: 28px;
+}
+
+/* 2. Le petit carré (cadre) clair qui contient le texte */
+.page-presentation .carte {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #f4f2f2ef;
+  color: #1b2438;
+  border-top: 5px solid #1e90ff;
+  border-radius: 14px;
+  padding: 40px 36px 34px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.page-presentation .carte h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0b3d91;
+  margin-bottom: 20px;
+}
+.page-presentation .carte p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: left;
+  color: #1b2438;
+}
+.page-presentation .carte p.signature {
+  text-align: right;
+  font-style: italic;
+  color: #4a5a78;
+  margin: 24px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #d5dcea;
+}
+
+/* L'élément au-dessus : un petit carré bleu */
+.page-presentation .petit-carre {
+  width: 16px;
+  height: 16px;
+  background: #1e90ff;
+  margin: 0 auto 18px;
+}
+
+/* 3 et 5. Les petites cartes (points forts, infos pratiques) */
+.page-presentation .point {
+  height: 100%;
+  padding: 26px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(30, 144, 255, 0.55);
+  border-radius: 14px;
+  transition: transform 0.3s, background 0.3s;
+}
+.page-presentation .point:hover {
+  transform: translateY(-6px);
+  background: rgba(30, 144, 255, 0.18);
+}
+.page-presentation .point .petit-carre { background: #4db5ff; }
+.page-presentation .point h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #4db5ff;
+}
+.page-presentation .point p { margin: 0; color: #e8f1ff; }
+.page-presentation .lien-info {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.page-presentation .lien-info:hover { text-decoration: underline; }
+
+/* 4. Les plats à découvrir */
+.page-presentation .plat {
+  display: block;
+  height: 100%;
+  padding: 18px 14px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(11, 61, 145, 0.65);
+  border: 1px solid #1e90ff;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
+}
+.page-presentation .plat:hover {
+  transform: translateY(-4px);
+  background: #1e90ff;
+  color: #ffffff;
+}
+.page-presentation .lien-menu { text-align: center; margin: 24px 0 0; }
+
+/* 6. Invitation */
+.page-presentation .appel p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+.page-presentation .appel .btn { margin: 4px; }
+
+/* Pied de page */
+.page-presentation .site-footer h5 {
+  color: #4db5ff;
+  font-size: 1rem;
+}
+
+/* --- 4. RÉSERVATION (reservation.html) --- */
+.section-reservation {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 6% 70px;
+    background-color: #0a2342;
+}
+
+.section-reservation h1 {
+    font-size: 2.5rem;
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.section-reservation .text-muted {
+    color: #cbd5e1 !important;
+}
+
+.boutons-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: nowrap;
+    margin: 28px auto 44px;
+}
+
+.btn-or {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: 1px solid #3b82f6;
+    padding: 14px 30px;
+    font-weight: bold;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.35);
+    transition: transform 0.2s, background-color 0.25s;
+}
+
+.btn-or:hover,
+.btn-or:active,
+.btn-or:focus {
+    background-color: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-sombre {
+    background-color: #12335f;
+    color: #ffffff;
+    border: 1px solid #2c5a96;
+    padding: 14px 30px;
+    font-weight: bold;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(2, 10, 28, 0.35);
+    transition: transform 0.2s, background-color 0.25s;
+}
+
+.btn-sombre:hover,
+.btn-sombre:active,
+.btn-sombre:focus {
+    background-color: #1b447c;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.bloc-option {
+    background-color: #12335f;
+    padding: 24px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(2, 10, 28, 0.4);
+    border-top: 3px solid #3b82f6;
+    height: 100%;
+    text-align: center;
+}
+
+.bloc-option h3 {
+    color: #60a5fa;
+    font-size: 1.12rem;
+    margin-bottom: 8px;
+}
+
+.bloc-option p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+/* ---------- 4. LA PAGE MENU ---------- */
+.page-menu .section-menu { padding: 110px 0 60px; }   /* 110px : la barre est fixe */
+
+.page-menu .section-menu h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 8px;
+}
+
+/* La phrase sous le titre (Bootstrap la met en gris : on l'éclaircit) */
+.page-menu .text-muted { color: var(--texte-doux) !important; }
+
+/* Espace entre les cartes (remplace le "g-8" qui n'existe pas dans Bootstrap) */
+.page-menu .row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+/* Une carte de plat : photo en haut, nom et prix en bas */
+.page-menu .carte-plat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bleu);
+  border: 1px solid rgba(30, 144, 255, 0.6);
+  border-radius: 16px;
+  overflow: hidden;                      /* garde la photo dans les coins arrondis */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.page-menu .carte-plat:hover {
+  transform: translateY(-8px);           /* la carte monte quand la souris passe */
+  box-shadow: 0 14px 28px rgba(30, 144, 255, 0.35);
+}
+.page-menu .carte-plat img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;                     /* la photo remplit le cadre sans se déformer */
+}
+.page-menu .carte-bas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px 18px;
+  background: linear-gradient(180deg, #0f3f9a, #0a3585);
+}
+.page-menu .nom-plat {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+.page-menu .prix-plat {
+  color: var(--bleu-clair);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+
+/* --- 5. INFOS & CONTACT CENTRÉ (infos-contact.html) --- */
+.section-infos-contact {
+    flex: 1 0 auto;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    padding: 120px 6% 70px;
+    background-color: #0a2342;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-infos-contact .container {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.section-infos-contact h1 {
+    font-size: 2.4rem;
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.intro-infos {
+    color: #cbd5e1;
+    font-size: 1.08rem;
+    max-width: 680px;
+    margin: 0 auto 20px;
+}
+
+.bloc-info {
+    background-color: #12335f;
+    padding: 26px 22px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(2, 10, 28, 0.4);
+    border-top: 3px solid #3b82f6;
+    height: 100%;
+    text-align: center;
+}
+
+.bloc-info h3 {
+    color: #60a5fa;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.bloc-info p {
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background-color: #061a33;
+    color: #e2e8f0;
+    padding: 28px 5% 18px;
+    border-top: 1px solid rgba(96, 165, 250, 0.35);
+}
+
+.footer-titre {
+    color: #60a5fa;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.footer-lien {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.footer-lien:hover {
+    text-decoration: underline;
+}
+
+/* Trait du footer : même couleur et même épaisseur que la bordure du haut */
+.footer-separateur {
+    border: 0;
+    border-top: 1px solid rgba(96, 165, 250, 0.35);
+    opacity: 1;
+}
+
+.footer-copyright {
+    color: #94a3b8;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 620px) {
+    .boutons-action {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .btn-or,
+    .btn-sombre {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .hero-accueil h1 {
+        font-size: 2.4rem;
+    }
+
+    .hilton-brand {
+        font-size: 1.6rem;
+    }
+}
